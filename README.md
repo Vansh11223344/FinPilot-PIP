@@ -30,16 +30,6 @@ The application is organized into a small React module graph:
 
 This structure keeps the product readable, modular, and easy to extend with real APIs or services later.
 
-## Screenshots
-
-Add screenshots here after running the app locally.
-
-- Dashboard placeholder: `./screenshots/dashboard.png`
-- Fraud Engine placeholder: `./screenshots/fraud-engine.png`
-- Optimizer placeholder: `./screenshots/optimizer.png`
-- Insights placeholder: `./screenshots/insights.png`
-- Assistant placeholder: `./screenshots/assistant.png`
-
 ## Future Scope
 
 - Replace rule-based heuristics with real ML models.
