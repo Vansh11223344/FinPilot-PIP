@@ -1,0 +1,26 @@
+[
+  {
+    "topic": "payment failures",
+    "keywords": ["failed", "failure", "declined", "reject", "retry", "timeout", "payment failed"],
+    "answer": "Most payment failures in this dataset cluster around late-night card and netbanking attempts. Retry success is higher when we delay the next attempt by 12-18 minutes and route to the historically stronger method for that bank.",
+    "action": "Check bank downtime signals, then trigger a smart retry with an alternate rail."
+  },
+  {
+    "topic": "refunds",
+    "keywords": ["refund", "reverse", "reversal", "chargeback refund"],
+    "answer": "Refunds are usually processed after the authorization timeline clears. For card refunds, the system should surface settlement status, expected turnaround, and whether the transaction has already been reversed at the processor layer.",
+    "action": "Verify settlement state before initiating a duplicate reversal."
+  },
+  {
+    "topic": "chargebacks",
+    "keywords": ["chargeback", "dispute", "fraud claim", "cardholder dispute"],
+    "answer": "Chargebacks are often linked to high-value card payments with weak verification signals. Strong responses include evidence packaging, device fingerprints, auth metadata, and a timeline of customer communication.",
+    "action": "Pull transaction evidence and route the case to the dispute queue."
+  },
+  {
+    "topic": "routing",
+    "keywords": ["route", "routing", "switch", "fallback", "smart retry"],
+    "answer": "The optimizer prefers the highest historical success rail for the amount band, then shifts retry timing away from congestion windows. That reduces repeat declines without creating unnecessary retry noise.",
+    "action": "Use the rail with the highest success probability in the same bank cohort."
+  }
+]
